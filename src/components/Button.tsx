@@ -1,12 +1,6 @@
-import React from "react";
 import classnames from "classnames";
-
-interface ButtonType extends React.ComponentPropsWithoutRef<"button"> {
-  children: React.ReactNode;
-  color?: "primary" | "secondary" | "success" | "warning" | "danger";
-  variant?: "contained" | "outlined" | "text";
-  rounded?: boolean;
-}
+import { twMerge } from "tailwind-merge";
+import { ButtonType } from "../Types/ButtonType";
 
 const Button = ({
   children,
@@ -21,7 +15,7 @@ const Button = ({
   const isWarn = color === "warning";
   const isErr = color === "danger";
 
-  const classes = classnames(
+  let classes = classnames(
     rest?.className,
     "px-3 py-1.5 border flex items-center gap-x-1",
     {
@@ -41,6 +35,8 @@ const Button = ({
       "border-0": variant === "text",
     }
   );
+
+  classes = twMerge(classes);
   return (
     <button {...rest} className={classes}>
       {children}
