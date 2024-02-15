@@ -1,10 +1,11 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { NavInterface, NavContextType } from "../Types/NavContextType";
+import { NavContextType } from "../Types/NavContextType";
+import { Childrenprops } from "../Types/common";
 
 export const NavigationContext = createContext<NavContextType | null>(null);
 const path = window.location.pathname;
 
-export const NavigationContextProvider = ({ children }: NavInterface) => {
+export const NavigationContextProvider = ({ children }: Childrenprops) => {
   const [currentPath, setCurrentPath] = useState(path);
 
   useEffect(() => {

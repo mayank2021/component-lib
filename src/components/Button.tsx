@@ -17,7 +17,7 @@ const Button = ({
 
   let classes = classnames(
     rest?.className,
-    "px-3 py-1.5 border flex items-center gap-x-1",
+    "px-3 py-1.5 border flex items-center justify-center gap-x-1",
     {
       "bg-blue-500 border-blue-600 text-white": isPri,
       "border-gray-900 bg-gray-900 text-white": isSec,
@@ -29,9 +29,9 @@ const Button = ({
       "text-blue-500": isPri && (variant === "outlined" || variant === "text"),
       "text-gray-500": isSec && (variant === "outlined" || variant === "text"),
       "text-green-500": isSuc && (variant === "outlined" || variant === "text"),
-      "yellow-blue-500":
+      "text-yellow-500":
         isWarn && (variant === "outlined" || variant === "text"),
-      "red-blue-500": isErr && (variant === "outlined" || variant === "text"),
+      "text-red-500": isErr && (variant === "outlined" || variant === "text"),
       "border-0": variant === "text",
     }
   );

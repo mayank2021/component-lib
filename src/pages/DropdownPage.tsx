@@ -11,10 +11,10 @@ const options = [
 const DropdownPage = () => {
   const [selection, setSelection] = useState<Option | null>(null);
 
+  // url added with pushState -> will not cause page refresh with back and fourth button
   const handleSelection = (option: Option) => {
     setSelection(option);
   };
-  // url added with pushState -> will not cause page refresh with back and fourth button
 
   return (
     <div>

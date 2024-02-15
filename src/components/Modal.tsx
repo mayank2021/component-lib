@@ -21,7 +21,7 @@ const Modal = ({ onCloseModal }: ModalProps) => {
         onClick={onCloseModal}
         className="fixed inset-0 bg-gray-300 opacity-80"
       ></div>
-      <div className="fixed inset-40 p-10 bg-white">context</div>
+      <div className="fixed inset-40 p-10 bg-white">CONTENT</div>
     </div>,
     modalDiv
   );

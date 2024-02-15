@@ -2,6 +2,8 @@ import Link from "./Link";
 
 const Sidebar = () => {
   const links = [
+    { label: "Home", path: "/" },
+    { label: "Rating", path: "/rating" },
     { label: "Button", path: "/button" },
     { label: "Dropdown", path: "/dropdown" },
     { label: "Accordion", path: "/accordion" },
@@ -15,7 +17,11 @@ const Sidebar = () => {
     </Link>
   ));
 
-  return <div className="flex flex-col">{renderLinks}</div>;
+  return (
+    <div className="flex flex-col h-full shadow-inner bg-blue-50">
+      {renderLinks}
+    </div>
+  );
 };
 
 export default Sidebar;

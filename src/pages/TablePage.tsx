@@ -1,15 +1,16 @@
 import { ReactNode } from "react";
 import SortableTable from "../components/SortableTable";
 import { TableRowData } from "../Types/TableTypes";
+import Table from "../components/Table";
+
+const data = [
+  { label: "orange", color: "bg-orange-500", score: 5 },
+  { label: "apple", color: "bg-red-500", score: 3 },
+  { label: "guava", color: "bg-green-500", score: 2 },
+  { label: "banana", color: "bg-yellow-500", score: 4 },
+];
 
 const TablePage = () => {
-  const data = [
-    { label: "orange", color: "bg-orange-500", score: 5 },
-    { label: "apple", color: "bg-red-500", score: 3 },
-    { label: "guava", color: "bg-green-500", score: 2 },
-    { label: "banana", color: "bg-yellow-500", score: 4 },
-  ];
-
   const config = [
     {
       label: "Fruits",
@@ -32,8 +33,9 @@ const TablePage = () => {
   const keyFn = (fruit: TableRowData): string => fruit.label;
 
   return (
-    <div>
+    <div className="flex gap-4">
       <SortableTable data={data} config={config} keyFn={keyFn} />
+      <Table data={data} config={config} keyFn={keyFn} />
     </div>
   );
 };
